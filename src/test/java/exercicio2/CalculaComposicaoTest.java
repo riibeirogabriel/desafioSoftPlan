@@ -32,7 +32,7 @@ public class CalculaComposicaoTest {
     void calculaComposicao_listaComItensDeUmaComposicao_textoDaComposicao()
             throws IOException, ParseException {
         Object composicoesGenerico = new JSONParser().parse(
-                new FileReader("test/exercicio2/itens-de-uma-composicao.json"));
+                new FileReader("./target/test-classes/itens-de-uma-composicao.json"));
         JSONArray composicoes = (JSONArray) composicoesGenerico;
 
         String textoComposicao = calculaComposicao.calculaComposicao(composicoes);

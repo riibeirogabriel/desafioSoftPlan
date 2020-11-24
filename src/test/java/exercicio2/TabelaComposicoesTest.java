@@ -33,7 +33,7 @@ public class TabelaComposicoesTest {
     void calculaComposicao_listaComItensDeUmaComposicao_textoDaComposicao()
             throws IOException, ParseException {
         Object composicoesGenerico = new JSONParser().parse(
-                new FileReader("test/exercicio2/itens-de-uma-composicao.json"));
+                new FileReader("./target/test-classes/itens-de-uma-composicao.json"));
         JSONArray composicoes = (JSONArray) composicoesGenerico;
         String textoComposicao =
                 tabelaComposicoes.geraTabelaDeComposicoes(composicoes, calculaComposicao);
@@ -50,7 +50,7 @@ public class TabelaComposicoesTest {
     void calculaComposicao_listaComItensVariasComposicoes_textoComComposicoes()
             throws IOException, ParseException {
         Object composicoesGenerico = new JSONParser().parse(
-                new FileReader("test/exercicio2/itens-de-varias-composicoes.json"));
+                new FileReader("./target/test-classes/itens-de-varias-composicoes.json"));
         JSONArray composicoes = (JSONArray) composicoesGenerico;
         String textoComposicao =
                 tabelaComposicoes.geraTabelaDeComposicoes(composicoes, calculaComposicao);
