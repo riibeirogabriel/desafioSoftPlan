@@ -1,7 +1,7 @@
 package exercicio2;
 
-import com.exercicio2.calculadorComposicao.CalculaComposicao;
 import com.exercicio2.calculadorComposicao.CalculadorComposicao;
+import com.exercicio2.calculadorComposicao.Composicao;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculaComposicaoTest {
-    CalculadorComposicao calculaComposicao = new CalculaComposicao();
+    Composicao calculaComposicao = new CalculadorComposicao();
 
     // nomes dos testes definido no formato metodoTestado_estadoTestado_valorEsperado
 
@@ -22,7 +22,7 @@ public class CalculaComposicaoTest {
         JSONArray composicaoSemItens = new JSONArray();
 
         String textoComposicao =
-                calculaComposicao.calculaComposicao(composicaoSemItens);
+                calculaComposicao.calcular(composicaoSemItens);
         String textoEsperado = "";
 
         assertEquals(textoEsperado, textoComposicao);
@@ -35,7 +35,7 @@ public class CalculaComposicaoTest {
                 new FileReader("./target/test-classes/itens-de-uma-composicao.json"));
         JSONArray composicoes = (JSONArray) composicoesGenerico;
 
-        String textoComposicao = calculaComposicao.calculaComposicao(composicoes);
+        String textoComposicao = calculaComposicao.calcular(composicoes);
         String textoEsperado = "94793 REGISTRO DE GAVETA BRUTO, LATÃO, ROSCÁVEL, 1 1/4, " +
                 "COM ACABAMENTO E CANOPLA CROMADOS, INSTALADO EM RESERVAÇÃO DE ÁGUA DE " +
                 "EDIFICAÇÃO QUE POSSUA RESERVATÓRIO DE FIBRA/FIBROCIMENTO FORNECIMENTO E " +

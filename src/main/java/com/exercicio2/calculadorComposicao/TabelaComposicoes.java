@@ -10,14 +10,14 @@ import java.util.Map;
 public class TabelaComposicoes {
     private static final String SEPARADOR_COMPOSICOES = "\n";
 
-    public String geraTabelaDeComposicoes(JSONArray composicoes, CalculadorComposicao calculadorComposicao) {
+    public String geraTabelaDeComposicoes(JSONArray composicoes, Composicao calculadorComposicao) {
         Map<Integer, JSONArray> itemsPorComposicao = separaItemsPorComposicao(composicoes);
 
         StringBuilder tabelaDeComposicoes = new StringBuilder();
 
         itemsPorComposicao.forEach((codigo, itens) ->
                 tabelaDeComposicoes.append(
-                        calculadorComposicao.calculaComposicao(itens)).append(SEPARADOR_COMPOSICOES));
+                        calculadorComposicao.calcular(itens)).append(SEPARADOR_COMPOSICOES));
 
         return tabelaDeComposicoes.toString();
     }

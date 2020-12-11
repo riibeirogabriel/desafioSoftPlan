@@ -1,7 +1,7 @@
 package com.exercicio2.main;
 
-import com.exercicio2.calculadorComposicao.CalculaComposicao;
 import com.exercicio2.calculadorComposicao.CalculadorComposicao;
+import com.exercicio2.calculadorComposicao.Composicao;
 import com.exercicio2.calculadorComposicao.TabelaComposicoes;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
@@ -20,7 +20,7 @@ public class Main {
         Object composicoesGenerico = new JSONParser().parse(new FileReader(DIRETORIO_COMPOSICAO_JSON));
         JSONArray composicoes = (JSONArray) composicoesGenerico;
 
-        CalculadorComposicao calculadorComposicao = new CalculaComposicao();
+        Composicao calculadorComposicao = new CalculadorComposicao();
         TabelaComposicoes tabelaComposicoes = new TabelaComposicoes();
         String tabelaDeComposicoes =
                 tabelaComposicoes.geraTabelaDeComposicoes(composicoes, calculadorComposicao);

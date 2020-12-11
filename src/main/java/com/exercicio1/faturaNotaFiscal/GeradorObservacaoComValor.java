@@ -10,17 +10,9 @@ import java.util.Map;
 public class GeradorObservacaoComValor implements FaturaNotaFiscal<Map<Integer, Double>> {
     private static final String TEXTO_TOTAL = "Total = ";
     private static final String TEXTO_VALOR_ITEM = " cujo valor é ";
-    private static final Integer QUANTIDADE_DE_VALORES_PLURAL = 2;
-    private static final String NOTA_SINGULAR =
-            "Fatura da nota fiscal de simples remessa: ";
-    private static final String NOTA_PLURAL =
-            "Fatura das notas fiscais de simples remessa: ";
-    private static final String NOTA_VALOR_VAZIO = "";
-
     NumberFormat formatadorNumeroParaReal = NumberFormat.getCurrencyInstance(
             new Locale("pt", "BR"));
 
-    // geraObservacao recebe um Map com cada key:value sendo um valor:preço
     public String geraObservacao(Map<Integer, Double> valoresComPrecos) {
         if (valoresComPrecos.size() == 0)
             return NOTA_VALOR_VAZIO;
@@ -77,7 +69,5 @@ public class GeradorObservacaoComValor implements FaturaNotaFiscal<Map<Integer, 
         return NOTA_PLURAL + faturaNotaFiscal;
 
     }
-
-
 }
 

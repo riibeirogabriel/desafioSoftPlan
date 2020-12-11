@@ -1,6 +1,6 @@
 package exercicio2;
 
-import com.exercicio2.calculadorComposicao.CalculaComposicao;
+import com.exercicio2.calculadorComposicao.CalculadorComposicao;
 import com.exercicio2.calculadorComposicao.TabelaComposicoes;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TabelaComposicoesTest {
     TabelaComposicoes tabelaComposicoes = new TabelaComposicoes();
-    CalculaComposicao calculaComposicao = new CalculaComposicao();
+    CalculadorComposicao calculaComposicao = new CalculadorComposicao();
     // nomes dos testes definido no formato metodoTestado_estadoTestado_valorEsperado
 
     @Test
